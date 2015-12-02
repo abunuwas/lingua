@@ -1,0 +1,14 @@
+
+<h1>{{ vocab_table.table_title }}</h1>
+<ul>
+	{% for word in vocab_table.words_set.all %}
+		<li>
+		{{ word.word }}, 
+		{% for meaning in word.meanings_set.all %}
+			{{ meaning.meaning }} 
+		{% endfor %}
+		</li>
+	{% endfor %}
+</ul>
+
+

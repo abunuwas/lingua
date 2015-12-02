@@ -1,0 +1,10 @@
+{% if latest_vocab_tables %}
+	<ul>
+		{% for vocab_list in latest_vocab_tables %}
+			<li><a href="{% url 'vocabulary:view' vocab_list.id %}">{{ vocab_list.table_title }}</a></li>
+		{% endfor %}
+	</ul><br />
+	<a href="create">Create a new table!</a>
+{% else %}
+	<p>No vocabulary lists yet! <a href="create">Create one!</a></p>
+{% endif %}
